@@ -1,1 +1,40 @@
-<Solution />
+<Solution>
+  <Folder Name="/docs/" />
+  <Folder Name="/docs/01-ERD/" />
+  <Folder Name="/docs/02-Architecture/" />
+  <Folder Name="/docs/03-API/" />
+  <Folder Name="/docs/04-Seeds/" />
+  <Folder Name="/docs/05-Deployment/" />
+  <Folder Name="/scripts/" />
+  <Folder Name="/scripts/database/" />
+  <Folder Name="/scripts/deploy/" />
+  <Folder Name="/scripts/migration/" />
+  <Folder Name="/scripts/seed/" />
+  <Folder Name="/src/">
+    <Project Path="PLPSOFT.ERP.Api/PLPSOFT.ERP.Api.csproj" />
+    <Project Path="PLPSOFT.ERP.Application/PLPSOFT.ERP.Application.csproj" />
+    <Project Path="PLPSOFT.ERP.Domain/PLPSOFT.ERP.Domain.csproj" />
+    <Project Path="PLPSOFT.ERP.Infrastructure/PLPSOFT.ERP.Infrastructure.csproj" />
+    <Project Path="PLPSOFT.ERP.Shared/PLPSOFT.ERP.Shared.csproj" />
+    <Project Path="PLPSOFT.ERP.WebApp/PLPSOFT.ERP.WebApp.csproj" />
+  </Folder>
+  <Folder Name="/src/modules/">
+    <Project Path="PLPSOFT.ERP.Module.Audit/PLPSOFT.ERP.Module.Audit.csproj" />
+    <Project Path="PLPSOFT.ERP.Module.Finance/PLPSOFT.ERP.Module.Finance.csproj" />
+    <Project Path="PLPSOFT.ERP.Module.Identity/PLPSOFT.ERP.Module.Identity.csproj" />
+    <Project Path="PLPSOFT.ERP.Module.Inventory/PLPSOFT.ERP.Module.Inventory.csproj" />
+    <Project Path="PLPSOFT.ERP.Module.MasterData/PLPSOFT.ERP.Module.MasterData.csproj" />
+    <Project Path="PLPSOFT.ERP.Module.Promotions/PLPSOFT.ERP.Module.Promotions.csproj" />
+    <Project Path="PLPSOFT.ERP.Module.Purchase/PLPSOFT.ERP.Module.Purchase.csproj" />
+    <Project Path="PLPSOFT.ERP.Module.Reporting/PLPSOFT.ERP.Module.Reporting.csproj" />
+    <Project Path="PLPSOFT.ERP.Module.Sales/PLPSOFT.ERP.Module.Sales.csproj" />
+    <Project Path="PLPSOFT.ERP.Module.Shipping/PLPSOFT.ERP.Module.Shipping.csproj" />
+    <Project Path="PLPSOFT.ERP.Module.SystemConfig/PLPSOFT.ERP.Module.SystemConfig.csproj" />
+    <Project Path="PLPSOFT.ERP.Module.Tenant/PLPSOFT.ERP.Module.Tenant.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="PLPSOFT.ERP.ArchitectureTests/PLPSOFT.ERP.ArchitectureTests.csproj" />
+    <Project Path="PLPSOFT.ERP.IntegrationTests/PLPSOFT.ERP.IntegrationTests.csproj" />
+    <Project Path="PLPSOFT.ERP.UnitTests/PLPSOFT.ERP.UnitTests.csproj" />
+  </Folder>
+</Solution>

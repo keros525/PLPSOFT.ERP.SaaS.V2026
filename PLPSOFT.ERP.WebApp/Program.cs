@@ -1,9 +1,19 @@
+
+using PLPSOFT.ERP.Module.Sales.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// Đăng ký trực tiếp Class (Vì bạn không dùng Interface)
+
+builder.Services.AddScoped<ProductRepository>();
+builder.Services.AddScoped<ProductCategoryRepository>();
+builder.Services.AddScoped<ProductUnitRepository>();
+
 var app = builder.Build();
+// Đăng ký Repository của Module Sales
+// Đăng ký theo cặp: Interface và Class thực thi
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
