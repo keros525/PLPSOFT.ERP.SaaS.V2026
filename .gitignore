@@ -1,0 +1,8 @@
+## Chặn file cấu hình cá nhân
+**/appsettings.Development.json
+
+## Chặn file rác của Visual Studio
+.vs/
+[Bb]in/
+[Oo]bj/
+*.user
