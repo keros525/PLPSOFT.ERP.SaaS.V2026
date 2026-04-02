@@ -10,4 +10,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PLPSOFT.ERP.Domain\PLPSOFT.ERP.Domain.csproj" />
+    <ProjectReference Include="..\PLPSOFT.ERP.Module.Sales\PLPSOFT.ERP.Module.Sales.csproj" />
+  </ItemGroup>
+
 </Project>

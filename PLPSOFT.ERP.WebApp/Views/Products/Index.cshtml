@@ -12,7 +12,14 @@
             + Thêm mới
         </button>
     </div>
-
+    @* <div class="row mb-3">
+        <div class="col-md-4">
+            <div class="input-group">
+                <input type="text" id="txtSearch" class="form-control" placeholder="Nhập mã hoặc tên sản phẩm...">
+                <button class="btn btn-primary" onclick="performSearch()">Tìm kiếm</button>
+            </div>
+        </div>
+    </div> *@
     <table id="productTable" class="table table-hover table-bordered shadow-sm">
         <thead class="table-dark">
             <tr>
@@ -81,7 +88,7 @@
         // Khởi tạo DataTable
         table = $('#productTable').DataTable({
         "ajax": {
-        "url": "/api/Products/1",
+        "url": "https://localhost:7261/api/Products/1",
         "dataSrc": ""
         },
         "columns": [
@@ -122,13 +129,13 @@
         function loadDropdowns() {
         //Danh mục
 
-        $.get('/api/ProductCategories/1', function(data) {
+        $.get('https://localhost:7261/api/ProductCategories/1', function(data) {
         let html = '<option value="">-- Chọn danh mục --</option>';
         html += data.map(x => `<option value="${x.categoryID}">${x.categoryName}</option>`).join('');
         $('#categorySelect').html(html);
         });
         // Gọi API lấy Đơn vị tính
-        $.get('/api/ProductUnits/1', function(data) {
+        $.get('https://localhost:7261/api/ProductUnits/1', function(data) {
         let html = '<option value="">-- Chọn đơn vị --</option>';
         
         if (data && data.length > 0) {
@@ -154,11 +161,11 @@
 
         // KIỂM TRA ĐIỀU KIỆN Ở ĐÂY
         let method = "POST";
-        let apiUrl = "/api/Products";
+        let apiUrl = "https://localhost:7261/api/Products";;
 
         if (currentEditId) {
         method = "PUT"; // Nếu có ID thì dùng PUT (Sửa)
-        apiUrl = "/api/Products/" + currentEditId;
+        apiUrl = "https://localhost:7261/api/Products/" + currentEditId;
         productData.productID = currentEditId; // Gửi kèm ID trong body
         }
 
@@ -202,7 +209,7 @@
         function deleteProduct(id) {
         if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này không?")) {
         $.ajax({
-        url: '/api/Products/' + id,
+        url: 'https://localhost:7261/api/Products/' + id,
         type: 'DELETE',
         success: function (res) {
         alert(res.message);
@@ -214,5 +221,20 @@
         });
         }
         }
+        // function performSearch() {
+        // let keyword = $('#txtSearch').val();
+        // // Sử dụng Port 7261 của API đã xác định ở Bước 4
+        // let newUrl = `https://localhost:7261/api/Products/search/1?keyword=${encodeURIComponent(keyword)}`;
+    
+        // // Thay đổi URL của DataTable và tải lại dữ liệu
+        // table.ajax.url(newUrl).load();
+        // }
+
+        // // Thêm sự kiện nhấn Enter để tìm kiếm cho tiện
+        // $('#txtSearch').on('keypress', function (e) {
+        // if (e.which === 13) {
+        // performSearch();
+        // }
+        // });
     </script>
 }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PLPSOFT.ERP.Module.Sales.Repositories;
 
-namespace PLPSOFT.ERP.WebApp.Controllers.Api;
+namespace PLPSOFT.ERP.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

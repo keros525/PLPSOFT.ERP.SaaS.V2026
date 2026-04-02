@@ -2,7 +2,7 @@
 using PLPSOFT.ERP.Domain.Entities;
 using PLPSOFT.ERP.Module.Sales.Repositories;
 
-namespace PLPSOFT.ERP.WebApp.Controllers.Api
+namespace PLPSOFT.ERP.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -55,6 +55,18 @@ namespace PLPSOFT.ERP.WebApp.Controllers.Api
             {
                 return BadRequest("Lỗi khi cập nhật: " + ex.Message);
             }
+        }
+        [HttpGet("search/{companyId}")]
+        public async Task<IActionResult> Search(long companyId, [FromQuery] string keyword)
+        {
+            if (string.IsNullOrEmpty(keyword))
+            {
+                // Nếu không có từ khóa, trả về toàn bộ sản phẩm như cũ
+                return Ok(await _repo.GetAllAsync(companyId));
+            }
+
+            var data = await _repo.SearchAsync(companyId, keyword);
+            return Ok(data);
         }
     }
 
